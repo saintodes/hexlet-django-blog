@@ -1,2 +1,6 @@
-__pycache__
 djvenv
+*.sqlite3
+__pycache__/
+.env
+.coverage
+htmlcov/
