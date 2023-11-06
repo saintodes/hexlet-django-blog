@@ -1,7 +1,13 @@
 from django.shortcuts import render
+from django.views import View
 
-def index(request):
-    context = {
-        'app_name': 'Hexlet Django Blog',
-    }
-    return render(request, 'articles/index.html', context)
+
+class IndexView(View):
+    def get(sel, request, *args, **kwargs):
+        return render(
+            request,
+            "articles/index.html",
+            context={
+                "app_name": "Hexlet Django Blog",
+            },
+        )
