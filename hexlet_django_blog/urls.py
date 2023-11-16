@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 from hexlet_django_blog import views
 from .views import IndexView
+from hexlet_django_blog.article.views import ArticleCommentsView
+from django.urls import path
 
 
 urlpatterns = [
@@ -25,4 +27,5 @@ urlpatterns = [
     path("about/", views.about),
     path("articles/", include("hexlet_django_blog.article.urls")),
     path("admin/", admin.site.urls),
+    path('<int:article_id>/comments/<int:id>/', ArticleCommentsView.as_view()),
 ]
